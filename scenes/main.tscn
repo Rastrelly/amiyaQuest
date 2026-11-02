@@ -1,0 +1,91 @@
+[gd_scene format=3 uid="uid://bqg3lhoavweg2"]
+
+[ext_resource type="PackedScene" uid="uid://b6slc83puh70p" path="res://scenes/pc_char.tscn" id="1_o5qli"]
+[ext_resource type="Texture2D" uid="uid://coylwctcvey1f" path="res://sprites/simplePlatfUrsus.png" id="2_0wfyh"]
+[ext_resource type="PackedScene" uid="uid://c0k2tdcxhpxuo" path="res://scenes/platformStatic.tscn" id="3_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://drlb2c36ydak6" path="res://scenes/destructible_crate.tscn" id="3_sugp2"]
+[ext_resource type="PackedScene" uid="uid://lovcyqlx506q" path="res://scenes/originium_slug.tscn" id="5_tbgi4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pitpm"]
+size = Vector2(128, 32)
+
+[node name="Main" type="Node2D" unique_id=352386577]
+
+[node name="pcChar" parent="." unique_id=1034325574 instance=ExtResource("1_o5qli")]
+
+[node name="platf" type="StaticBody2D" parent="." unique_id=1030835240]
+position = Vector2(3, 88)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="platf" unique_id=345910322]
+texture_filter = 1
+texture = ExtResource("2_0wfyh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platf" unique_id=1310031912]
+shape = SubResource("RectangleShape2D_pitpm")
+
+[node name="platf4" parent="." unique_id=249573184 instance=ExtResource("3_jyhfs")]
+position = Vector2(132, 54)
+
+[node name="platf8" parent="." unique_id=142820858 instance=ExtResource("3_jyhfs")]
+position = Vector2(132, 20)
+
+[node name="platf9" parent="." unique_id=322580508 instance=ExtResource("3_jyhfs")]
+position = Vector2(521, 55)
+
+[node name="platf10" parent="." unique_id=86260348 instance=ExtResource("3_jyhfs")]
+position = Vector2(521, 21)
+
+[node name="platf11" parent="." unique_id=508447763 instance=ExtResource("3_jyhfs")]
+position = Vector2(521, -13)
+
+[node name="platf15" parent="." unique_id=887572127 instance=ExtResource("3_jyhfs")]
+position = Vector2(521, -48)
+
+[node name="platf2" type="StaticBody2D" parent="." unique_id=369411872]
+position = Vector2(132, 88)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="platf2" unique_id=1259298823]
+texture_filter = 1
+texture = ExtResource("2_0wfyh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platf2" unique_id=719903513]
+shape = SubResource("RectangleShape2D_pitpm")
+
+[node name="platf3" type="StaticBody2D" parent="." unique_id=125036425]
+position = Vector2(-126, 88)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="platf3" unique_id=1505705869]
+texture_filter = 1
+texture = ExtResource("2_0wfyh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platf3" unique_id=1302505821]
+shape = SubResource("RectangleShape2D_pitpm")
+
+[node name="destrCrate" parent="." unique_id=1408950361 instance=ExtResource("3_sugp2")]
+position = Vector2(-174, 55)
+metadata/_edit_group_ = true
+
+[node name="platf5" parent="." unique_id=1440794465 instance=ExtResource("3_jyhfs")]
+position = Vector2(261, 88)
+
+[node name="platf6" parent="." unique_id=1651328762 instance=ExtResource("3_jyhfs")]
+position = Vector2(391, 88)
+
+[node name="platf7" parent="." unique_id=2012554562 instance=ExtResource("3_jyhfs")]
+position = Vector2(521, 88)
+
+[node name="platf12" parent="." unique_id=1119168193 instance=ExtResource("3_jyhfs")]
+position = Vector2(651, -48)
+
+[node name="platf13" parent="." unique_id=1836831311 instance=ExtResource("3_jyhfs")]
+position = Vector2(781, -48)
+
+[node name="platf14" parent="." unique_id=1408196673 instance=ExtResource("3_jyhfs")]
+position = Vector2(911, -48)
+
+[node name="originiumSlug" parent="." unique_id=1632717678 instance=ExtResource("5_tbgi4")]
+position = Vector2(718, -83)
+rangeX = 300.0

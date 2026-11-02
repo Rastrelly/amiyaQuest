@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://b6slc83puh70p"]
+
+[ext_resource type="Script" uid="uid://br4ah88wuc6wt" path="res://scripts/pc_char.gd" id="1_7sev4"]
+[ext_resource type="SpriteFrames" uid="uid://oliplxioa48k" path="res://sprites/amimi.tres" id="1_fp70r"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pitpm"]
+height = 42.0
+
+[node name="pcChar" type="CharacterBody2D" unique_id=1034325574]
+script = ExtResource("1_7sev4")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1296742437]
+texture_filter = 1
+sprite_frames = ExtResource("1_fp70r")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2100924060]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=16949993]
+position = Vector2(1, 5)
+shape = SubResource("CapsuleShape2D_pitpm")

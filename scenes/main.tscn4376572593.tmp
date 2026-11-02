@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bqg3lhoavweg2"]
+
+[ext_resource type="PackedScene" uid="uid://b6slc83puh70p" path="res://scenes/pc_char.tscn" id="1_o5qli"]
+[ext_resource type="Texture2D" uid="uid://coylwctcvey1f" path="res://sprites/simplePlatfUrsus.png" id="2_0wfyh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pitpm"]
+size = Vector2(128, 32)
+
+[node name="Main" type="Node2D" unique_id=352386577]
+
+[node name="pcChar" parent="." unique_id=1034325574 instance=ExtResource("1_o5qli")]
+
+[node name="platf" type="StaticBody2D" parent="." unique_id=1030835240]
+position = Vector2(3, 88)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="platf" unique_id=345910322]
+texture_filter = 1
+texture = ExtResource("2_0wfyh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platf" unique_id=1310031912]
+shape = SubResource("RectangleShape2D_pitpm")
+
+[node name="platf2" type="StaticBody2D" parent="." unique_id=369411872]
+position = Vector2(132, 88)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="platf2" unique_id=1259298823]
+texture_filter = 1
+texture = ExtResource("2_0wfyh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platf2" unique_id=719903513]
+shape = SubResource("RectangleShape2D_pitpm")
+
+[node name="platf3" type="StaticBody2D" parent="." unique_id=125036425]
+position = Vector2(-126, 88)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="platf3" unique_id=1505705869]
+texture_filter = 1
+texture = ExtResource("2_0wfyh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platf3" unique_id=1302505821]
+shape = SubResource("RectangleShape2D_pitpm")

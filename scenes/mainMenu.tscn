@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://cuyb34dl7pv3r"]
+
+[ext_resource type="Script" uid="uid://c0f2xml8dsa58" path="res://scripts/main_menu.gd" id="1_qkhwq"]
+
+[node name="mainMenuNode" type="Node2D" unique_id=661911145]
+script = ExtResource("1_qkhwq")
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=153062096]
+custom_minimum_size = Vector2(320, 240)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="CenterContainer" unique_id=1035073536]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="CenterContainer/AspectRatioContainer" unique_id=1180565669]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+
+[node name="btnNewGame" type="Button" parent="CenterContainer/AspectRatioContainer/Panel" unique_id=982463582]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 17.0
+offset_right = 160.0
+offset_bottom = 52.0
+text = "New Game
+"
+
+[node name="Button" type="Button" parent="CenterContainer/AspectRatioContainer/Panel" unique_id=769046225]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 149.0
+offset_right = 168.0
+offset_bottom = 182.0
+text = "Quit
+"
+
+[node name="Camera2D" type="Camera2D" parent="CenterContainer" unique_id=1987849631]
+position = Vector2(160, 120)
+
+[connection signal="button_up" from="CenterContainer/AspectRatioContainer/Panel/btnNewGame" to="." method="_on_btn_new_game_button_up"]
+[connection signal="button_up" from="CenterContainer/AspectRatioContainer/Panel/Button" to="." method="_on_button_button_up"]

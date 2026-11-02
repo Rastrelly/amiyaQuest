@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://drlb2c36ydak6"]
+
+[ext_resource type="Texture2D" uid="uid://j0hnu1aa4l6q" path="res://sprites/crate.png" id="1_3be3r"]
+[ext_resource type="Script" uid="uid://stf4oc6yb101" path="res://scenes/destructible_crate.gd" id="1_w6j4a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pitpm"]
+size = Vector2(32, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_esmnr"]
+size = Vector2(32, 32)
+
+[node name="destrCrate" type="StaticBody2D" unique_id=1408950361]
+script = ExtResource("1_w6j4a")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1678279489]
+texture_filter = 1
+texture = ExtResource("1_3be3r")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=507649272]
+collision_layer = 4
+collision_mask = 0
+
+[node name="areaColl" type="CollisionShape2D" parent="Area2D" unique_id=841983237]
+shape = SubResource("RectangleShape2D_pitpm")
+
+[node name="staticColl" type="CollisionShape2D" parent="." unique_id=1671667366]
+shape = SubResource("RectangleShape2D_esmnr")

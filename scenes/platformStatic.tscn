@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://c0k2tdcxhpxuo"]
+
+[ext_resource type="Texture2D" uid="uid://coylwctcvey1f" path="res://sprites/simplePlatfUrsus.png" id="1_k2clo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pitpm"]
+size = Vector2(128, 32)
+
+[node name="platf4" type="StaticBody2D" unique_id=249573184]
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=102555362]
+texture_filter = 1
+texture = ExtResource("1_k2clo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1050681067]
+shape = SubResource("RectangleShape2D_pitpm")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1942680124]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D" unique_id=175556796]
+shape = SubResource("RectangleShape2D_pitpm")
