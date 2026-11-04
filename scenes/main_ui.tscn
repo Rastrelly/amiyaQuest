@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://dd87cpji307rp"]
+
+[ext_resource type="Script" uid="uid://8tin6pr4eokx" path="res://scripts/main_ui.gd" id="1_fnul3"]
+
+[node name="mainUi" type="Control" unique_id=604756981]
+z_index = 100
+layout_mode = 3
+anchors_preset = 0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("1_fnul3")
+
+[node name="uiCont" type="AspectRatioContainer" parent="." unique_id=917398232]
+custom_minimum_size = Vector2(320, 240)
+custom_maximum_size = Vector2(1920, 1080)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -160.0
+offset_top = -120.0
+offset_right = 160.0
+offset_bottom = 120.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="labelHP" type="Label" parent="uiCont" unique_id=294630171]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+text = "0"
+
+[node name="labelDeath" type="Label" parent="uiCont" unique_id=337098129]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+text = "YOU DIED"
+horizontal_alignment = 1

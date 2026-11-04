@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://b5pe7w1vcbliq"]
+
+[ext_resource type="Script" uid="uid://dudbdpg74glvl" path="res://scripts/reunion_drone.gd" id="1_ec11d"]
+[ext_resource type="Texture2D" uid="uid://3sgmw3rn81c" path="res://sprites/reun_drone.png" id="2_0e0v8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bge0h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8o5f6"]
+atlas = ExtResource("2_0e0v8")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4wn7u"]
+atlas = ExtResource("2_0e0v8")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t6yid"]
+atlas = ExtResource("2_0e0v8")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dy64y"]
+atlas = ExtResource("2_0e0v8")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5fnys"]
+atlas = ExtResource("2_0e0v8")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0i3rm"]
+atlas = ExtResource("2_0e0v8")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uwe5r"]
+atlas = ExtResource("2_0e0v8")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i3exx"]
+atlas = ExtResource("2_0e0v8")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4oju8"]
+atlas = ExtResource("2_0e0v8")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pitpm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8o5f6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4wn7u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t6yid")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dy64y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5fnys")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0i3rm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uwe5r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i3exx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4oju8")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="reunionDrone" type="StaticBody2D" unique_id=403043365]
+script = ExtResource("1_ec11d")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=915530624]
+collision_layer = 4
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1973084875]
+shape = SubResource("RectangleShape2D_bge0h")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=438098528]
+sprite_frames = SubResource("SpriteFrames_pitpm")
+autoplay = "default"
+frame = 1
+frame_progress = 0.036460426

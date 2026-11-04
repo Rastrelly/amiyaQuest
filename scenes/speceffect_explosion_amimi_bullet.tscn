@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://cvbn1pfxwkbr"]
+
+[ext_resource type="PackedScene" uid="uid://bkk3ouph7pfns" path="res://scenes/speceffect_explosion.tscn" id="1_4ufxq"]
+[ext_resource type="Texture2D" uid="uid://dsu5ttlyacqmr" path="res://sprites/amimi_bullet_death_anim.png" id="2_w7367"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g7crt"]
+atlas = ExtResource("2_w7367")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hwddq"]
+atlas = ExtResource("2_w7367")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_543g5"]
+atlas = ExtResource("2_w7367")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u3ujh"]
+atlas = ExtResource("2_w7367")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b7tdc"]
+atlas = ExtResource("2_w7367")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w7367"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g7crt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hwddq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_543g5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u3ujh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b7tdc")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="speceffect" unique_id=1413436321 instance=ExtResource("1_4ufxq")]
+
+[node name="AnimatedSprite2D" parent="." index="0" unique_id=1677364355]
+sprite_frames = SubResource("SpriteFrames_w7367")
+frame_progress = 0.0

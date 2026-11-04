@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b2yu4cocqei0h"]
+
+[ext_resource type="Texture2D" uid="uid://wu4l6ojs3xoy" path="res://sprites/elev_platf_def.png" id="1_dxn6k"]
+[ext_resource type="Script" uid="uid://bcf3t00njwwpy" path="res://scripts/elevator_platf_def.gd" id="1_rl4r2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pitpm"]
+size = Vector2(128, 16)
+
+[node name="elevator_platf_def" type="AnimatableBody2D" unique_id=34117823]
+script = ExtResource("1_rl4r2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1181327144]
+shape = SubResource("RectangleShape2D_pitpm")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=844926393]
+texture_filter = 1
+texture = ExtResource("1_dxn6k")

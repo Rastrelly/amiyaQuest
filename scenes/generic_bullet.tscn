@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://dpail0cqxbx5t"]
+
+[ext_resource type="PackedScene" uid="uid://widefol3dxh3" path="res://scenes/amimi_bullet.tscn" id="1_iagem"]
+[ext_resource type="PackedScene" uid="uid://cvbn1pfxwkbr" path="res://scenes/speceffect_explosion_amimi_bullet.tscn" id="2_gu4x6"]
+[ext_resource type="Texture2D" uid="uid://b3i5brd8a4h4f" path="res://sprites/simple_bullet_reun.png" id="3_ee3hy"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_asy2h"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ee3hy")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gu4x6"]
+radius = 6.0207973
+
+[node name="amimi_bullet" unique_id=969401603 instance=ExtResource("1_iagem")]
+isPlrBullet = false
+deathEffect = ExtResource("2_gu4x6")
+
+[node name="AnimatedSprite2D" parent="." index="0" unique_id=2099324671]
+sprite_frames = SubResource("SpriteFrames_asy2h")
+frame_progress = 0.0
+
+[node name="CollisionShape2D" parent="hitZone" parent_id_path=PackedInt32Array(804505557) index="0" unique_id=346452740]
+shape = SubResource("CircleShape2D_gu4x6")

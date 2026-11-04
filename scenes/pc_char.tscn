@@ -6,17 +6,30 @@
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pitpm"]
 height = 42.0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pitpm"]
+size = Vector2(18, 30)
+
 [node name="pcChar" type="CharacterBody2D" unique_id=1034325574]
 script = ExtResource("1_7sev4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1296742437]
 texture_filter = 1
 sprite_frames = ExtResource("1_fp70r")
-animation = &"idle"
+animation = &"run_shoot"
 autoplay = "idle"
+frame = 3
+frame_progress = 0.6115172
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=2100924060]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=16949993]
 position = Vector2(1, 5)
 shape = SubResource("CapsuleShape2D_pitpm")
+
+[node name="hurtbox_area" type="Area2D" parent="." unique_id=974428932]
+collision_layer = 4
+collision_mask = 0
+
+[node name="hurtbox_shape" type="CollisionShape2D" parent="hurtbox_area" unique_id=458027952]
+position = Vector2(1, 5)
+shape = SubResource("RectangleShape2D_pitpm")

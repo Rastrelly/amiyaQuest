@@ -1,6 +1,7 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://oliplxioa48k"]
 
 [ext_resource type="Texture2D" uid="uid://biyawxc2vejf6" path="res://sprites/amimi.png" id="1_ajqas"]
+[ext_resource type="Texture2D" uid="uid://cwas33fvj832i" path="res://sprites/amimi_runshoot.png" id="2_hkv1w"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hkv1w"]
 atlas = ExtResource("1_ajqas")
@@ -62,6 +63,22 @@ region = Rect2(128, 0, 64, 64)
 atlas = ExtResource("1_ajqas")
 region = Rect2(192, 0, 64, 64)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_r2kh2"]
+atlas = ExtResource("2_hkv1w")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j5v45"]
+atlas = ExtResource("2_hkv1w")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_efe3o"]
+atlas = ExtResource("2_hkv1w")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tuqcy"]
+atlas = ExtResource("2_hkv1w")
+region = Rect2(192, 0, 64, 64)
+
 [resource]
 animations = [{
 "frames": [{
@@ -88,7 +105,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kf6yw")
 }],
-"loop": 1,
+"loop": 0,
 "name": &"die",
 "speed": 10.0
 }, {
@@ -132,5 +149,22 @@ animations = [{
 }],
 "loop": 1,
 "name": &"run",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r2kh2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j5v45")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_efe3o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tuqcy")
+}],
+"loop": 1,
+"name": &"run_shoot",
 "speed": 10.0
 }]

@@ -2,6 +2,7 @@ extends StaticBody2D
 
 @onready var slugSprite: AnimatedSprite2D = $AnimatedSprite2D
 
+@export var slugDeathEffect = load("res://scenes/speceffect_explosion.tscn")
 @export var rangeX:float = 100.0
 @export var speed:float = 84.0
 
@@ -12,6 +13,7 @@ var transitPos:float = 0.5
 var transitTime:float = 0.0
 var timeDir:int = 1
 var timePos:float = 0.0
+var hitDmg:float = 4.0
 
 #damage handling
 var hp:float = 1.0
@@ -45,4 +47,13 @@ func _process(delta: float) -> void:
 	transitPos = timePos / transitTime
 	var outPosX:float = lerp(pos1.x,pos2.x,transitPos)
 	self.position.x = outPosX
-	if (hp<=0): self.queue_free()
+	if (hp<=0): 
+		var deathEffectInst = slugDeathEffect.instantiate()
+		self.get_parent().add_child(deathEffectInst)
+		deathEffectInst.transform = self.transform
+		self.queue_free()
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area.get_parent().has_method("take_damage"):
+		area.get_parent().take_damage(hitDmg)

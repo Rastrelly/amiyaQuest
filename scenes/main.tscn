@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://c0k2tdcxhpxuo" path="res://scenes/platformStatic.tscn" id="3_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://drlb2c36ydak6" path="res://scenes/destructible_crate.tscn" id="3_sugp2"]
 [ext_resource type="PackedScene" uid="uid://lovcyqlx506q" path="res://scenes/originium_slug.tscn" id="5_tbgi4"]
+[ext_resource type="PackedScene" uid="uid://b5pe7w1vcbliq" path="res://scenes/reunion_drone.tscn" id="6_tefeu"]
+[ext_resource type="PackedScene" uid="uid://b2yu4cocqei0h" path="res://scenes/elevator_platf_def.tscn" id="7_o6xl0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pitpm"]
 size = Vector2(128, 32)
@@ -86,6 +88,71 @@ position = Vector2(781, -48)
 [node name="platf14" parent="." unique_id=1408196673 instance=ExtResource("3_jyhfs")]
 position = Vector2(911, -48)
 
+[node name="platf16" parent="." unique_id=1010999861 instance=ExtResource("3_jyhfs")]
+position = Vector2(1040, -48)
+
+[node name="platf17" parent="." unique_id=1344487687 instance=ExtResource("3_jyhfs")]
+position = Vector2(1170, -48)
+
+[node name="platf18" parent="." unique_id=896591926 instance=ExtResource("3_jyhfs")]
+position = Vector2(1300, -48)
+
+[node name="platf19" parent="." unique_id=2031596701 instance=ExtResource("3_jyhfs")]
+position = Vector2(1430, -48)
+
+[node name="platf20" parent="." unique_id=726301277 instance=ExtResource("3_jyhfs")]
+position = Vector2(1560, -48)
+
+[node name="platf24" parent="." unique_id=1165753311 instance=ExtResource("3_jyhfs")]
+position = Vector2(1560, -124)
+
+[node name="platf25" parent="." unique_id=1834020585 instance=ExtResource("3_jyhfs")]
+position = Vector2(1040, -155)
+
+[node name="platf26" parent="." unique_id=502845399 instance=ExtResource("3_jyhfs")]
+position = Vector2(1173, -155)
+
+[node name="platf27" parent="." unique_id=1254174753 instance=ExtResource("3_jyhfs")]
+position = Vector2(1108, -118)
+
+[node name="platf28" parent="." unique_id=1021363564 instance=ExtResource("3_jyhfs")]
+position = Vector2(1107, -83)
+
+[node name="platf21" parent="." unique_id=802521383 instance=ExtResource("3_jyhfs")]
+position = Vector2(1690, -48)
+
+[node name="platf22" parent="." unique_id=473135493 instance=ExtResource("3_jyhfs")]
+position = Vector2(1820, -48)
+
+[node name="platf23" parent="." unique_id=684469130 instance=ExtResource("3_jyhfs")]
+position = Vector2(1950, -48)
+
+[node name="platf29" parent="." unique_id=50190308 instance=ExtResource("3_jyhfs")]
+position = Vector2(2218, -348)
+
+[node name="platf30" parent="." unique_id=1269754517 instance=ExtResource("3_jyhfs")]
+position = Vector2(2348, -348)
+
+[node name="platf31" parent="." unique_id=335207068 instance=ExtResource("3_jyhfs")]
+position = Vector2(2478, -348)
+
 [node name="originiumSlug" parent="." unique_id=1632717678 instance=ExtResource("5_tbgi4")]
 position = Vector2(718, -83)
 rangeX = 300.0
+
+[node name="originiumSlug2" parent="." unique_id=1262161247 instance=ExtResource("5_tbgi4")]
+position = Vector2(1109, -193)
+rangeX = 230.0
+
+[node name="reunionDrone" parent="." unique_id=403043365 instance=ExtResource("6_tefeu")]
+position = Vector2(1952, -231)
+
+[node name="reunionDrone2" parent="." unique_id=1581054385 instance=ExtResource("6_tefeu")]
+position = Vector2(2132, -233)
+
+[node name="reunionDrone3" parent="." unique_id=1232039635 instance=ExtResource("6_tefeu")]
+position = Vector2(2535, -517)
+
+[node name="elevator_platf_def" parent="." unique_id=34117823 instance=ExtResource("7_o6xl0")]
+position = Vector2(2084, -356)
+startPoint2 = true
