@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://drlb2c36ydak6"]
 
 [ext_resource type="Texture2D" uid="uid://j0hnu1aa4l6q" path="res://sprites/crate.png" id="1_3be3r"]
-[ext_resource type="Script" uid="uid://stf4oc6yb101" path="res://scenes/destructible_crate.gd" id="1_w6j4a"]
+[ext_resource type="Script" uid="uid://stf4oc6yb101" path="res://scripts/destructible_crate.gd" id="1_w6j4a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pitpm"]
 size = Vector2(32, 32)

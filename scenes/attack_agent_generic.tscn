@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bi8jlyj4cv4xp"]
+
+[ext_resource type="Script" uid="uid://qqmmiriqjdw3" path="res://scripts/attack_agent_generic.gd" id="1_faqwa"]
+
+[node name="attack_agent_generic" type="Node2D" unique_id=1390415782]
+script = ExtResource("1_faqwa")

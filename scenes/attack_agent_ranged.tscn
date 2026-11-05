@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://tlchetb5ti2w"]
+
+[ext_resource type="PackedScene" uid="uid://bi8jlyj4cv4xp" path="res://scenes/attack_agent_generic.tscn" id="1_dle6y"]
+[ext_resource type="Script" uid="uid://bjjgrv5jmcedg" path="res://scripts/attack_agent_ranged.gd" id="2_2jvmw"]
+[ext_resource type="PackedScene" uid="uid://dpail0cqxbx5t" path="res://scenes/generic_bullet.tscn" id="3_aim36"]
+
+[node name="attack_agent_generic" unique_id=1390415782 instance=ExtResource("1_dle6y")]
+script = ExtResource("2_2jvmw")
+bulletClass = ExtResource("3_aim36")

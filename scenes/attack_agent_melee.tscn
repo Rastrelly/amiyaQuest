@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cjfsvohve255y"]
+
+[ext_resource type="PackedScene" uid="uid://bi8jlyj4cv4xp" path="res://scenes/attack_agent_generic.tscn" id="1_baqjp"]
+[ext_resource type="Script" uid="uid://b7fluilnbtavs" path="res://scripts/attack_agent_melee.gd" id="2_ye4cb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pitpm"]
+radius = 23.0
+
+[node name="attack_agent_generic" unique_id=1390415782 instance=ExtResource("1_baqjp")]
+script = ExtResource("2_ye4cb")
+damage = 2.0
+
+[node name="Area2D" type="Area2D" parent="." index="0" unique_id=319004635]
+collision_layer = 0
+collision_mask = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" index="0" unique_id=1185706543]
+shape = SubResource("CircleShape2D_pitpm")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

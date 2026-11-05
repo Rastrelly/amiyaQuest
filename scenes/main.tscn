@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://lovcyqlx506q" path="res://scenes/originium_slug.tscn" id="5_tbgi4"]
 [ext_resource type="PackedScene" uid="uid://b5pe7w1vcbliq" path="res://scenes/reunion_drone.tscn" id="6_tefeu"]
 [ext_resource type="PackedScene" uid="uid://b2yu4cocqei0h" path="res://scenes/elevator_platf_def.tscn" id="7_o6xl0"]
+[ext_resource type="PackedScene" uid="uid://wudvj274qynp" path="res://scenes/generic_enemy.tscn" id="8_tipki"]
+[ext_resource type="PackedScene" uid="uid://jd6s34nxf7gq" path="res://scenes/reunion_ranged.tscn" id="9_85g3d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pitpm"]
 size = Vector2(128, 32)
@@ -156,3 +158,9 @@ position = Vector2(2535, -517)
 [node name="elevator_platf_def" parent="." unique_id=34117823 instance=ExtResource("7_o6xl0")]
 position = Vector2(2084, -356)
 startPoint2 = true
+
+[node name="genericEnemy" parent="." unique_id=918831689 instance=ExtResource("8_tipki")]
+position = Vector2(539, -95)
+
+[node name="genericEnemy2" parent="." unique_id=1064152983 instance=ExtResource("9_85g3d")]
+position = Vector2(805, -95)

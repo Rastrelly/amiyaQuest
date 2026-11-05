@@ -43,7 +43,7 @@ animations = [{
 size = Vector2(10, 5)
 
 [node name="amimi_bullet" type="StaticBody2D" unique_id=969401603]
-collision_layer = 4
+collision_layer = 0
 collision_mask = 4
 script = ExtResource("1_0t2rx")
 

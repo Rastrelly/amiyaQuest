@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://jd6s34nxf7gq"]
+
+[ext_resource type="PackedScene" uid="uid://wudvj274qynp" path="res://scenes/generic_enemy.tscn" id="1_3gq3f"]
+[ext_resource type="PackedScene" uid="uid://tlchetb5ti2w" path="res://scenes/attack_agent_ranged.tscn" id="2_h57p5"]
+
+[node name="genericEnemy" unique_id=918831689 instance=ExtResource("1_3gq3f")]
+triggerDistance = 500.0
+attackDistance = 120.0
+attackAgentClass = ExtResource("2_h57p5")
+attackAgentSpawnOffset = Vector2(5, 0)
