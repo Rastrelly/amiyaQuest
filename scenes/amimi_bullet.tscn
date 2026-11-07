@@ -40,7 +40,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pitpm"]
-size = Vector2(10, 5)
+size = Vector2(10, 10)
 
 [node name="amimi_bullet" type="StaticBody2D" unique_id=969401603]
 collision_layer = 0
@@ -58,7 +58,7 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hitZone" unique_id=346452740]
-position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_pitpm")
 
 [connection signal="area_entered" from="hitZone" to="." method="_on_hit_zone_area_entered"]
+[connection signal="body_entered" from="hitZone" to="." method="_on_hit_zone_body_entered"]

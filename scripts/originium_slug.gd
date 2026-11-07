@@ -55,7 +55,7 @@ func _process(delta: float) -> void:
 
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
-	if area.get_parent().has_method("isEnemy"):
-		if not area.get_parent().isEnemy():
+	if area.get_parent().has_method("getIsEnemy"):
+		if not area.get_parent().getIsEnemy():
 			if area.get_parent().has_method("take_damage"):
 				area.get_parent().take_damage(hitDmg)

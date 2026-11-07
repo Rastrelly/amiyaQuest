@@ -27,15 +27,17 @@ func playDeathEffect():
 	
 func die():
 	self.queue_free()
+	
+func handleCollisionProcess(obj: Node2D) -> void:
+	if (GlobalFuncLib.checkDamageable(obj,isPlrBullet,damage)):
+		playDeathEffect()
+		die()
 
 
 func _on_hit_zone_area_entered(area: Area2D) -> void:
-	if (area.get_parent().has_method("getIsEnemy")):
-		if (area.get_parent().getIsEnemy() == isPlrBullet):
-			if (area.get_parent().has_method("take_damage")):
-				area.get_parent().take_damage(damage)
-				playDeathEffect()
-				die()
-	else:
-		playDeathEffect()
-		die()
+	handleCollisionProcess(area)
+
+
+func _on_hit_zone_body_entered(body: Node2D) -> void:
+	handleCollisionProcess(body)
+	

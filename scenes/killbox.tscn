@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bilb0mfab6dei"]
+
+[ext_resource type="Script" uid="uid://66wlkvsru6g0" path="res://scripts/killbox.gd" id="1_hsvkp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_esmnr"]
+
+[node name="killbox" type="Area2D" unique_id=827518016]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_hsvkp")
+
+[node name="CollisionShape" type="CollisionShape2D" parent="." unique_id=1865477702]
+shape = SubResource("RectangleShape2D_esmnr")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
