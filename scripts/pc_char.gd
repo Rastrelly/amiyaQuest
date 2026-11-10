@@ -124,15 +124,29 @@ func _physics_process(delta: float) -> void:
 		isAttacking = true
 	else:
 		isAttacking = false
-
-	# Handle jump
-	if Input.is_action_just_pressed("moveJump") and not midair:
-		velocity.y = JUMP_VELOCITY
-		jumpExtendTime=0.0
 		
-	if Input.is_action_pressed("moveJump") and midair and jumpExtendTime<JUMP_EXTEND_MAX_TIME and velocity.y < 0:
-		jumpExtendTime+=delta
-		velocity.y -= abs(get_gravity().y) * 0.4 * delta
+	#handle using helpers
+	if (Input.is_action_pressed("useHelper0")):
+		GlobalHelperController.useHelper(0)
+	if (Input.is_action_pressed("useHelper1")):
+		GlobalHelperController.useHelper(1)
+	if (Input.is_action_pressed("useHelper2")):
+		GlobalHelperController.useHelper(2)
+		
+	# Handle jump
+	if not Input.is_action_pressed("moveDown"):
+		if Input.is_action_just_pressed("moveJump") and not midair:
+			velocity.y = JUMP_VELOCITY
+			jumpExtendTime=0.0
+			
+		if Input.is_action_pressed("moveJump") and midair and jumpExtendTime<JUMP_EXTEND_MAX_TIME and velocity.y < 0:
+			jumpExtendTime+=delta
+			velocity.y -= abs(get_gravity().y) * 0.4 * delta
+	else:
+		if Input.is_action_just_pressed("moveJump") and not midair:
+			GlobalStateMonitor.jumpDownMode = true
+		if Input.is_action_just_released("moveJump"):
+			GlobalStateMonitor.jumpDownMode = false
 		
 	if not Input.is_action_pressed("moveJump") and midair:
 		jumpExtendTime=JUMP_EXTEND_MAX_TIME

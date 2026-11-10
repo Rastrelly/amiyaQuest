@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://c51ma0a71c5r6"]
+
+[ext_resource type="Texture2D" uid="uid://b3beu3j0to5jm" path="res://sprites/jumpthrough_platf_01.png" id="1_jwt4f"]
+[ext_resource type="Script" uid="uid://cf5ip8dar0t3a" path="res://scripts/jumpthroughPlatf.gd" id="2_0qeni"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pitpm"]
+size = Vector2(64, 6)
+
+[node name="jumpthroughPlatf" type="Sprite2D" unique_id=1248071977]
+texture = ExtResource("1_jwt4f")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1267285419]
+script = ExtResource("2_0qeni")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1559993515]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_pitpm")
+one_way_collision = true

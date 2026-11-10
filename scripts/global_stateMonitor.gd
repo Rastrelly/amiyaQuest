@@ -2,6 +2,7 @@ extends Node
 
 var playerPos:Vector2
 var playerHP:float = 0.0
+var jumpDownMode:bool = false
 
 signal player_position(player_position: Vector2)
 

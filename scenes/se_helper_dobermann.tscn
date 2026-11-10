@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://br1rwk1atpwwa"]
+
+[ext_resource type="PackedScene" uid="uid://bkk3ouph7pfns" path="res://scenes/speceffect_explosion.tscn" id="1_r5ksr"]
+[ext_resource type="Texture2D" uid="uid://dq5nv2tcv8we0" path="res://sprites/helperSprites/dobermann.png" id="2_akcqt"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n6hus"]
+atlas = ExtResource("2_akcqt")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4wmfy"]
+atlas = ExtResource("2_akcqt")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wqflp"]
+atlas = ExtResource("2_akcqt")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_couyd"]
+atlas = ExtResource("2_akcqt")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_di1fr"]
+atlas = ExtResource("2_akcqt")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pq4pd"]
+atlas = ExtResource("2_akcqt")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wlk4u"]
+atlas = ExtResource("2_akcqt")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_budgo"]
+atlas = ExtResource("2_akcqt")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rx451"]
+atlas = ExtResource("2_akcqt")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lnl7f"]
+atlas = ExtResource("2_akcqt")
+region = Rect2(576, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3j2co"]
+atlas = ExtResource("2_akcqt")
+region = Rect2(640, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hkv1w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n6hus")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4wmfy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wqflp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_couyd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_di1fr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pq4pd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wlk4u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_budgo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rx451")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lnl7f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3j2co")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="speceffect" unique_id=1413436321 instance=ExtResource("1_r5ksr")]
+
+[node name="AnimatedSprite2D" parent="." index="0" unique_id=1677364355]
+sprite_frames = SubResource("SpriteFrames_hkv1w")
+frame_progress = 0.0
