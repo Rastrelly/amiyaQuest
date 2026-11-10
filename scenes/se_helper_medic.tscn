@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://dqb2tletlg7an"]
+
+[ext_resource type="PackedScene" uid="uid://bkk3ouph7pfns" path="res://scenes/speceffect_explosion.tscn" id="1_ds4xn"]
+[ext_resource type="Texture2D" uid="uid://cuma4bn38rase" path="res://sprites/helperSprites/medic.png" id="2_ds4xn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bsf6w"]
+atlas = ExtResource("2_ds4xn")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4ldu"]
+atlas = ExtResource("2_ds4xn")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nv20f"]
+atlas = ExtResource("2_ds4xn")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nsjj8"]
+atlas = ExtResource("2_ds4xn")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5y11d"]
+atlas = ExtResource("2_ds4xn")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_im0ut"]
+atlas = ExtResource("2_ds4xn")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sm7lg"]
+atlas = ExtResource("2_ds4xn")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_thgo6"]
+atlas = ExtResource("2_ds4xn")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ywye5"]
+atlas = ExtResource("2_ds4xn")
+region = Rect2(512, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v4ldu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bsf6w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4ldu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nv20f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nsjj8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5y11d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_im0ut")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sm7lg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_thgo6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ywye5")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="speceffect" unique_id=1413436321 instance=ExtResource("1_ds4xn")]
+
+[node name="AnimatedSprite2D" parent="." index="0" unique_id=1677364355]
+sprite_frames = SubResource("SpriteFrames_v4ldu")
+frame_progress = 0.0

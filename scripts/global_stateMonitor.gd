@@ -2,9 +2,11 @@ extends Node
 
 var playerPos:Vector2
 var playerHP:float = 0.0
+var playerDir:int = 1
 var jumpDownMode:bool = false
 
 signal player_position(player_position: Vector2)
+signal healPlayer(amt:int)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

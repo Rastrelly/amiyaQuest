@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://bshu7r8nn43rs"]
+
+[ext_resource type="Script" uid="uid://d1hn82ns3eo68" path="res://scripts/speceffect.gd" id="1_rk0el"]
+[ext_resource type="Texture2D" uid="uid://bqonu2130bk2s" path="res://sprites/seDobermannWhip.png" id="2_rk0el"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iin1x"]
+atlas = ExtResource("2_rk0el")
+region = Rect2(0, 0, 200, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3yuwp"]
+atlas = ExtResource("2_rk0el")
+region = Rect2(0, 20, 200, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eeaw7"]
+atlas = ExtResource("2_rk0el")
+region = Rect2(0, 40, 200, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nu6vs"]
+atlas = ExtResource("2_rk0el")
+region = Rect2(0, 60, 200, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xccr8"]
+atlas = ExtResource("2_rk0el")
+region = Rect2(0, 80, 200, 20)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_78bnk"]
+atlas = ExtResource("2_rk0el")
+region = Rect2(0, 100, 200, 20)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3yuwp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iin1x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3yuwp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eeaw7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nu6vs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xccr8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_78bnk")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 20.0
+}]
+
+[node name="speceffect" type="Node2D" unique_id=1413436321]
+script = ExtResource("1_rk0el")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1677364355]
+sprite_frames = SubResource("SpriteFrames_3yuwp")
+autoplay = "default"
+frame = 5
+frame_progress = 1.0
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_speceffect_finished"]

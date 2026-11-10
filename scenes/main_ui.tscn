@@ -73,6 +73,47 @@ offset_transform_position = Vector2(90, 100)
 texture = ExtResource("2_513t2")
 expand_mode = 3
 
+[node name="HBoxContainer2" type="HBoxContainer" parent="." unique_id=43940294]
+custom_minimum_size = Vector2(205, 8)
+custom_maximum_size = Vector2(205, 8)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -208.0
+offset_top = -131.0
+offset_right = -3.0
+offset_bottom = -67.0
+grow_horizontal = 0
+grow_vertical = 0
+offset_transform_position = Vector2(128, -64)
+
+[node name="pb_helper1_reload" type="ProgressBar" parent="HBoxContainer2" unique_id=1880694639]
+custom_minimum_size = Vector2(64, 0)
+custom_maximum_size = Vector2(64, -1)
+layout_mode = 2
+size_flags_vertical = 1
+max_value = 1.0
+show_percentage = false
+
+[node name="pb_helper2_reload" type="ProgressBar" parent="HBoxContainer2" unique_id=630069058]
+custom_minimum_size = Vector2(64, 0)
+custom_maximum_size = Vector2(64, -1)
+layout_mode = 2
+size_flags_vertical = 1
+max_value = 1.0
+show_percentage = false
+
+[node name="pb_helper3_reload" type="ProgressBar" parent="HBoxContainer2" unique_id=1156128023]
+custom_minimum_size = Vector2(64, 0)
+custom_maximum_size = Vector2(64, -1)
+layout_mode = 2
+size_flags_vertical = 1
+max_value = 1.0
+show_percentage = false
+
 [node name="labelHP" type="Label" parent="." unique_id=294630171]
 layout_mode = 1
 offset_left = 10.0

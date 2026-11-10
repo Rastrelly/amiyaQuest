@@ -22,6 +22,7 @@ var isAttacking:bool = false
 var isDead:bool = false
 var deathTimePool:float = 5.0
 var hp:float = 10.0
+var hpMax:float = 10.0
 
 var midair:bool = false
 
@@ -49,9 +50,17 @@ func take_damage(amt:float):
 func getIsEnemy() -> bool:
 	return isEnemy;
 	
+
+func heal(amt:int)->void:
+	hp+=amt
+	if (hp > hpMax):
+		hp = hpMax
+
+
 func _ready() -> void:	
 	var UI = uiClass.instantiate()	
 	cameraRef.add_child.call_deferred(UI)
+	GlobalStateMonitor.healPlayer.connect(heal)
 	
 
 func _physics_process(delta: float) -> void:
@@ -108,8 +117,10 @@ func _physics_process(delta: float) -> void:
 	if (velocity.x < 0):
 		plrSprite.flip_h = true
 		lookDir = -1.0
-		
-		
+	
+	#refresh gjlobal player dir
+	GlobalStateMonitor.playerDir = round(lookDir)
+	
 	# Add the gravity.
 	if midair:
 		velocity += get_gravity() * delta

@@ -15,7 +15,13 @@ func checkDamageable(obj:Node2D, checkState:bool, dmgAmt: float) -> bool:
 	else:
 		return true
 
-
+#spawns speceffects cene node ad point; probably can spawn any node, needs testing
+func spawnSpeceffectAtPoint(path:String, pos: Vector2, scale: Vector2) -> void:
+	var se = load(path)
+	var seInst = se.instantiate()
+	get_tree().current_scene.add_child(seInst)
+	seInst.position = pos
+	seInst.scale = scale
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bo3th0nhxv51r"]
+
+[ext_resource type="Script" uid="uid://dp0xufpy5sald" path="res://scripts/dobermann_area_cast.gd" id="1_ubftn"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pitpm"]
+size = Vector2(200, 20)
+
+[node name="dobermannArea" type="Area2D" unique_id=1269514199]
+collision_layer = 4
+collision_mask = 4
+script = ExtResource("1_ubftn")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1079541282]
+shape = SubResource("RectangleShape2D_pitpm")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
