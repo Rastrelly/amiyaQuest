@@ -19,6 +19,9 @@ var helperTimers:Array[float]=[0.0,0.0,0.0]
 #contains cooldowns for all helpers; filled in _ready; is not slot-related
 var helperCooldowns:Array[float]=[]
 
+#contains names for helperIcons, not slot-related
+var helperNames:Array[String]=[]
+
 #names for icos of current helpers
 var helperIcons:Array[String]=["medic","dobermann","na"]
 
@@ -26,7 +29,11 @@ var helperIcons:Array[String]=["medic","dobermann","na"]
 func assignHelper(slotId:int, helperId:int, helperName:String) -> void:
 	if (slotId >= 0 and slotId < maxHelpers):
 		helpers[slotId] = helperId
-		helperIcons[slotId] = helperName
+		helperIcons[slotId] = helperName		
+		for i in maxHelpers:
+			if (helpers[i] == helpers[slotId] and i != slotId):
+				helpers[i] = 0
+				helperIcons[i] = "na"
 		updateHelperUI.emit()
 		
 #sets helper timers to zero
@@ -61,10 +68,17 @@ func useHelper(helperSlot:int) -> bool:
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	#build helper cooldowns
 	helperCooldowns.append(0)
 	helperCooldowns.append(45.0) #medic
 	helperCooldowns.append(15.0) #dobermann
 	helperCooldowns.append(5.0)  #ace
+	
+	#build helper names
+	helperNames.append("na")
+	helperNames.append("medic")
+	helperNames.append("dobermann")
+	helperNames.append("ace")
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

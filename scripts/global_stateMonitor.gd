@@ -5,6 +5,8 @@ var playerHP:float = 0.0
 var playerDir:int = 1
 var jumpDownMode:bool = false
 
+var nextGameLevel:String = "res://scenes/main.tscn"
+
 signal player_position(player_position: Vector2)
 signal healPlayer(amt:int)
 

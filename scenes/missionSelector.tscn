@@ -1,0 +1,178 @@
+[gd_scene format=3 uid="uid://dul156xwvpuui"]
+
+[ext_resource type="Texture2D" uid="uid://o85jmc1hyrxp" path="res://sprites/uiGraphics/ico_na_smol.png" id="1_35f7w"]
+[ext_resource type="Script" uid="uid://c86uh0f21p8nw" path="res://scripts/operator_selector.gd" id="1_uyy5q"]
+
+[node name="lvl_select" type="Node2D" unique_id=1652621226]
+script = ExtResource("1_uyy5q")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1869758980]
+position = Vector2(-400, -300)
+
+[node name="Control" type="Control" parent="Camera2D" unique_id=2096326108]
+custom_minimum_size = Vector2(800, 600)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="selOP1" type="TextureRect" parent="Camera2D/Control" unique_id=410766523]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 181.0
+offset_right = 154.0
+offset_bottom = 489.0
+texture = ExtResource("1_35f7w")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="selOP2" type="TextureRect" parent="Camera2D/Control" unique_id=1592739556]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 181.0
+offset_right = 323.0
+offset_bottom = 489.0
+texture = ExtResource("1_35f7w")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="selOP3" type="TextureRect" parent="Camera2D/Control" unique_id=241068426]
+layout_mode = 0
+offset_left = 334.0
+offset_top = 181.0
+offset_right = 489.0
+offset_bottom = 489.0
+texture = ExtResource("1_35f7w")
+expand_mode = 5
+stretch_mode = 5
+
+[node name="btnSel1" type="Button" parent="Camera2D/Control" unique_id=455223287]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 22.0
+offset_right = 198.0
+offset_bottom = 65.0
+text = "Select OP1"
+
+[node name="btnSel2" type="Button" parent="Camera2D/Control" unique_id=818406899]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 73.0
+offset_right = 198.0
+offset_bottom = 116.0
+text = "Select OP2
+"
+
+[node name="btnSel3" type="Button" parent="Camera2D/Control" unique_id=1781752425]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 123.0
+offset_right = 198.0
+offset_bottom = 166.0
+text = "Select OP3
+"
+
+[node name="btnBack" type="Button" parent="Camera2D/Control" unique_id=813542371]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 542.0
+offset_right = 186.0
+offset_bottom = 585.0
+text = "< Back"
+
+[node name="btnStart" type="Button" parent="Camera2D/Control" unique_id=1841408726]
+layout_mode = 0
+offset_left = 203.0
+offset_top = 543.0
+offset_right = 377.0
+offset_bottom = 586.0
+text = "START
+"
+
+[node name="GridContainer" type="GridContainer" parent="Camera2D/Control" unique_id=79227232]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -302.0
+offset_top = -1.0
+grow_horizontal = 0
+grow_vertical = 2
+columns = 2
+
+[node name="opImg1" type="TextureButton" parent="Camera2D/Control/GridContainer" unique_id=628494473]
+layout_mode = 2
+texture_normal = ExtResource("1_35f7w")
+texture_pressed = ExtResource("1_35f7w")
+texture_hover = ExtResource("1_35f7w")
+
+[node name="opImg2" type="TextureButton" parent="Camera2D/Control/GridContainer" unique_id=232286563]
+layout_mode = 2
+texture_normal = ExtResource("1_35f7w")
+texture_pressed = ExtResource("1_35f7w")
+texture_hover = ExtResource("1_35f7w")
+
+[node name="opImg3" type="TextureButton" parent="Camera2D/Control/GridContainer" unique_id=1674203958]
+layout_mode = 2
+texture_normal = ExtResource("1_35f7w")
+texture_pressed = ExtResource("1_35f7w")
+texture_hover = ExtResource("1_35f7w")
+
+[node name="opImg4" type="TextureButton" parent="Camera2D/Control/GridContainer" unique_id=1714996549]
+layout_mode = 2
+texture_normal = ExtResource("1_35f7w")
+texture_pressed = ExtResource("1_35f7w")
+texture_hover = ExtResource("1_35f7w")
+
+[node name="opImg5" type="TextureButton" parent="Camera2D/Control/GridContainer" unique_id=1311690654]
+layout_mode = 2
+texture_normal = ExtResource("1_35f7w")
+texture_pressed = ExtResource("1_35f7w")
+texture_hover = ExtResource("1_35f7w")
+
+[node name="opImg6" type="TextureButton" parent="Camera2D/Control/GridContainer" unique_id=1680110660]
+layout_mode = 2
+texture_normal = ExtResource("1_35f7w")
+texture_pressed = ExtResource("1_35f7w")
+texture_hover = ExtResource("1_35f7w")
+
+[node name="opImg7" type="TextureButton" parent="Camera2D/Control/GridContainer" unique_id=803418434]
+layout_mode = 2
+texture_normal = ExtResource("1_35f7w")
+texture_pressed = ExtResource("1_35f7w")
+texture_hover = ExtResource("1_35f7w")
+
+[node name="opImg8" type="TextureButton" parent="Camera2D/Control/GridContainer" unique_id=2071787615]
+layout_mode = 2
+texture_normal = ExtResource("1_35f7w")
+texture_pressed = ExtResource("1_35f7w")
+texture_hover = ExtResource("1_35f7w")
+
+[node name="btnPrev" type="Button" parent="Camera2D/Control/GridContainer" unique_id=632955327]
+layout_mode = 2
+text = "< Prev
+"
+
+[node name="btnNext" type="Button" parent="Camera2D/Control/GridContainer" unique_id=1238236686]
+layout_mode = 2
+text = "Next >
+"
+
+[connection signal="pressed" from="Camera2D/Control/btnSel1" to="." method="_on_btn_sel_1_pressed"]
+[connection signal="pressed" from="Camera2D/Control/btnSel2" to="." method="_on_btn_sel_2_pressed"]
+[connection signal="pressed" from="Camera2D/Control/btnSel3" to="." method="_on_btn_sel_3_pressed"]
+[connection signal="pressed" from="Camera2D/Control/btnBack" to="." method="_on_btn_back_pressed"]
+[connection signal="pressed" from="Camera2D/Control/btnStart" to="." method="_on_btn_start_pressed"]
+[connection signal="pressed" from="Camera2D/Control/GridContainer/opImg1" to="." method="_on_op_img_1_pressed"]
+[connection signal="pressed" from="Camera2D/Control/GridContainer/opImg2" to="." method="_on_op_img_2_pressed"]
+[connection signal="pressed" from="Camera2D/Control/GridContainer/opImg3" to="." method="_on_op_img_3_pressed"]
+[connection signal="pressed" from="Camera2D/Control/GridContainer/opImg4" to="." method="_on_op_img_4_pressed"]
+[connection signal="pressed" from="Camera2D/Control/GridContainer/opImg5" to="." method="_on_op_img_5_pressed"]
+[connection signal="pressed" from="Camera2D/Control/GridContainer/opImg6" to="." method="_on_op_img_6_pressed"]
+[connection signal="pressed" from="Camera2D/Control/GridContainer/opImg7" to="." method="_on_op_img_7_pressed"]
+[connection signal="pressed" from="Camera2D/Control/GridContainer/opImg8" to="." method="_on_op_img_8_pressed"]
+[connection signal="pressed" from="Camera2D/Control/GridContainer/btnPrev" to="." method="_on_btn_prev_pressed"]
+[connection signal="pressed" from="Camera2D/Control/GridContainer/btnNext" to="." method="_on_btn_next_pressed"]
