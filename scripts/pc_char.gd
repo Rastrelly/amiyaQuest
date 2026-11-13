@@ -12,11 +12,13 @@ var uiClass = load("res://scenes/main_ui.tscn")
 
 
 const SPEED = 180.0
-const JUMP_VELOCITY = -400.0
+const JUMP_VELOCITY = -500.0
 const SHOOT_RELOAD_TIME = 0.4
 const JUMP_EXTEND_MAX_TIME = 1
 const IFRAMES_TIME:float = 0.6
 const BLINK_TIME:float = 0.05
+const GRAVITY_MULT:float = 2.0
+const JUMP_EXTEND_MULTIPLIER:float = 1.1
 
 var isAttacking:bool = false
 var isDead:bool = false
@@ -123,7 +125,7 @@ func _physics_process(delta: float) -> void:
 	
 	# Add the gravity.
 	if midair:
-		velocity += get_gravity() * delta
+		velocity += get_gravity() * GRAVITY_MULT * delta
 	
 	if (isDead):
 		velocity.x = 0
@@ -152,7 +154,7 @@ func _physics_process(delta: float) -> void:
 			
 		if Input.is_action_pressed("moveJump") and midair and jumpExtendTime<JUMP_EXTEND_MAX_TIME and velocity.y < 0:
 			jumpExtendTime+=delta
-			velocity.y -= abs(get_gravity().y) * 0.4 * delta
+			velocity.y -= abs(get_gravity().y) * JUMP_EXTEND_MULTIPLIER * delta
 	else:
 		if Input.is_action_just_pressed("moveJump") and not midair:
 			GlobalStateMonitor.jumpDownMode = true
