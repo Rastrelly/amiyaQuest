@@ -47,12 +47,28 @@ func assignPageTextures() ->void:
 	$Camera2D/Control/GridContainer/opImg6.texture_pressed = opTex[5]
 	$Camera2D/Control/GridContainer/opImg7.texture_pressed = opTex[6]
 	$Camera2D/Control/GridContainer/opImg8.texture_pressed = opTex[7]
+	
+	
+func updateSelectorButtons() -> void:
+	if slot == 0:
+		$Camera2D/Control/btnSel1.add_theme_color_override("font_color",Color.GREEN)
+		$Camera2D/Control/btnSel2.add_theme_color_override("font_color",Color.WHITE)
+		$Camera2D/Control/btnSel3.add_theme_color_override("font_color",Color.WHITE)
+	if slot == 1:
+		$Camera2D/Control/btnSel1.add_theme_color_override("font_color",Color.WHITE)
+		$Camera2D/Control/btnSel2.add_theme_color_override("font_color",Color.GREEN)
+		$Camera2D/Control/btnSel3.add_theme_color_override("font_color",Color.WHITE)
+	if slot == 2:
+		$Camera2D/Control/btnSel1.add_theme_color_override("font_color",Color.WHITE)
+		$Camera2D/Control/btnSel2.add_theme_color_override("font_color",Color.WHITE)
+		$Camera2D/Control/btnSel3.add_theme_color_override("font_color",Color.GREEN)
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	prepPageTextures()
 	assignPageTextures()
 	updateSelOps()
+	updateSelectorButtons()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -90,17 +106,31 @@ func setOp(id:int)->void:
 	selOpInd =  sOpInd
 	GlobalHelperController.assignHelper(slot,sOpInd,getHelperName(sOpInd))
 	updateSelOps()
+	
+	
+func loadOpDescByButton(butId:int)->void:
+	var sOpInd:int = butId+1 + opsPerPage*page
+	loadOpDesc(sOpInd)
+	
+
+func loadOpDesc(id:int)->void:
+	var file = FileAccess.open("res://text/"+getHelperName(id)+"_desc.txt", FileAccess.READ)
+	var content = file.get_as_text()
+	$Camera2D/Control/desc.text = content
 
 func _on_btn_sel_1_pressed() -> void:
 	slot = 0
+	updateSelectorButtons()
 
 
 func _on_btn_sel_2_pressed() -> void:
 	slot = 1
+	updateSelectorButtons()
 
 
 func _on_btn_sel_3_pressed() -> void:
 	slot = 2
+	updateSelectorButtons()
 
 func _on_op_img_1_pressed() -> void:
 	setOp(0)
@@ -131,3 +161,47 @@ func _on_op_img_7_pressed() -> void:
 
 func _on_op_img_8_pressed() -> void:
 	setOp(7)
+
+
+func _on_op_img_1_mouse_entered() -> void:
+	loadOpDescByButton(0)
+
+
+func _on_op_img_2_mouse_entered() -> void:
+	loadOpDescByButton(1)
+
+
+func _on_op_img_3_mouse_entered() -> void:
+	loadOpDescByButton(2)
+
+
+func _on_op_img_4_mouse_entered() -> void:
+	loadOpDescByButton(3)
+
+
+func _on_op_img_5_mouse_entered() -> void:
+	loadOpDescByButton(4)
+
+
+func _on_op_img_6_mouse_entered() -> void:
+	loadOpDescByButton(5)
+
+
+func _on_op_img_7_mouse_entered() -> void:
+	loadOpDescByButton(6)
+
+
+func _on_op_img_8_mouse_entered() -> void:
+	loadOpDescByButton(7)
+
+
+func _on_sel_op_1_mouse_entered() -> void:
+	loadOpDesc(GlobalHelperController.helpers[0])
+
+
+func _on_sel_op_2_mouse_entered() -> void:
+	loadOpDesc(GlobalHelperController.helpers[1])
+
+
+func _on_sel_op_3_mouse_entered() -> void:
+	loadOpDesc(GlobalHelperController.helpers[2])

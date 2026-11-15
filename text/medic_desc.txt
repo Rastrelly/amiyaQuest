@@ -1,0 +1,2 @@
+Rhodes Island Medic
+- Action: restores 10 HP

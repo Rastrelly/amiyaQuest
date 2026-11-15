@@ -1,0 +1,2 @@
+Ace
+- Effect: Sets up shield to reflect all incoming damage for a very short time

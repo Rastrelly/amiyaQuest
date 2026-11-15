@@ -1,0 +1,2 @@
+Instructor Dobermann
+- Effect: attacks in view direction damaging all targets in a horizontal line
