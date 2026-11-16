@@ -16,14 +16,45 @@ var helpers:Array[int]=[1,2,0]
 #timer to reset helper availability
 var helperTimers:Array[float]=[0.0,0.0,0.0]
 
+#names for icos of current helpers
+var helperIcons:Array[String]=["medic","dobermann","na"]
+
 #contains cooldowns for all helpers; filled in _ready; is not slot-related
 var helperCooldowns:Array[float]=[]
 
 #contains names for helperIcons, not slot-related
 var helperNames:Array[String]=[]
 
-#names for icos of current helpers
-var helperIcons:Array[String]=["medic","dobermann","na"]
+#status of helpers unlockedness
+var helperUnlocks:Array[bool]=[]
+
+#helper functions
+
+#rese helper colldown
+func resetHelperSlotTimer(slt:int)->void:
+	helperTimers[slt] = helperCooldowns[helpers[slt]]
+
+
+func useMedic()->void:
+	GlobalFuncLib.spawnSpeceffectAtPoint("res://scenes/se_helper_medic.tscn",GlobalStateMonitor.playerPos,Vector2(GlobalStateMonitor.playerDir,1.0))
+	GlobalStateMonitor.healPlayer.emit(10)
+
+func useDobermann()->void:
+	GlobalFuncLib.spawnSpeceffectAtPoint("res://scenes/se_helper_dobermann.tscn",GlobalStateMonitor.playerPos,Vector2(GlobalStateMonitor.playerDir,1.0))
+	GlobalFuncLib.spawnSpeceffectAtPoint("res://scenes/speceffect_dober_whip.tscn",GlobalStateMonitor.playerPos+Vector2(100,0)*GlobalStateMonitor.playerDir,Vector2(GlobalStateMonitor.playerDir,1.0))
+	GlobalFuncLib.spawnSpeceffectAtPoint("res://scenes/helperScenes/dobermannAreaCast.tscn",GlobalStateMonitor.playerPos + Vector2(100,0)*GlobalStateMonitor.playerDir,Vector2(1.0,1.0))
+
+func useAce()->void:
+	pass
+
+
+#makes helper unlocked and accessible in ui
+func unlockHelper(id:int)->void:
+	helperUnlocks[id]=true
+	
+#makes helper locked and inaccessible in ui
+func lockHelper(id:int)->void:
+	helperUnlocks[id]=false
 
 #sets helper in slot by id (see comment for helpers array variable)
 func assignHelper(slotId:int, helperId:int, helperName:String) -> void:
@@ -48,19 +79,18 @@ func useHelper(helperSlot:int) -> bool:
 			return false
 			
 		if (helpers[helperSlot]==1): 			
-			GlobalFuncLib.spawnSpeceffectAtPoint("res://scenes/se_helper_medic.tscn",GlobalStateMonitor.playerPos,Vector2(GlobalStateMonitor.playerDir,1.0))
-			GlobalStateMonitor.healPlayer.emit(10)
-			helperTimers[helperSlot] = helperCooldowns[helpers[helperSlot]]
+			useMedic()
+			resetHelperSlotTimer(helperSlot)
 			return true
 			
 		if (helpers[helperSlot]==2):
-			GlobalFuncLib.spawnSpeceffectAtPoint("res://scenes/se_helper_dobermann.tscn",GlobalStateMonitor.playerPos,Vector2(GlobalStateMonitor.playerDir,1.0))
-			GlobalFuncLib.spawnSpeceffectAtPoint("res://scenes/speceffect_dober_whip.tscn",GlobalStateMonitor.playerPos+Vector2(100,0)*GlobalStateMonitor.playerDir,Vector2(GlobalStateMonitor.playerDir,1.0))
-			GlobalFuncLib.spawnSpeceffectAtPoint("res://scenes/helperScenes/dobermannAreaCast.tscn",GlobalStateMonitor.playerPos + Vector2(100,0)*GlobalStateMonitor.playerDir,Vector2(1.0,1.0))
-			helperTimers[helperSlot] = helperCooldowns[helpers[helperSlot]]
+			useDobermann()
+			resetHelperSlotTimer(helperSlot)
 			return true
 			
 		if (helpers[helperSlot]==3): 
+			useAce()
+			resetHelperSlotTimer(helperSlot)
 			return true
 			
 	return false
@@ -72,13 +102,19 @@ func _ready() -> void:
 	helperCooldowns.append(0)
 	helperCooldowns.append(45.0) #medic
 	helperCooldowns.append(15.0) #dobermann
-	helperCooldowns.append(5.0)  #ace
+	helperCooldowns.append(3.0)  #ace
 	
 	#build helper names
 	helperNames.append("na")
 	helperNames.append("medic")
 	helperNames.append("dobermann")
 	helperNames.append("ace")
+	
+	#build helper unlocks
+	helperUnlocks.append(false)
+	helperUnlocks.append(true) #medic
+	helperUnlocks.append(true) #dobermann
+	helperUnlocks.append(true) #ace
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
