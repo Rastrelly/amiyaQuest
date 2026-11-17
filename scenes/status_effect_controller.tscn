@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bwtlhnw8a7omg"]
+
+[ext_resource type="Script" uid="uid://csp2l7si7jx0j" path="res://scripts/status_effect_controller.gd" id="1_0vkbu"]
+
+[node name="statusEffectController" type="Node" unique_id=203237462]
+script = ExtResource("1_0vkbu")
