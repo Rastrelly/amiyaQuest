@@ -1,0 +1,74 @@
+[gd_scene format=3 uid="uid://dpn1cvp41en74"]
+
+[ext_resource type="PackedScene" uid="uid://bkk3ouph7pfns" path="res://scenes/speceffect_explosion.tscn" id="1_c6ade"]
+[ext_resource type="Texture2D" uid="uid://dc616i2bl80mt" path="res://sprites/helperSprites/ace.png" id="2_c6ade"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uike7"]
+atlas = ExtResource("2_c6ade")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jvfou"]
+atlas = ExtResource("2_c6ade")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_83tj8"]
+atlas = ExtResource("2_c6ade")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0vf4p"]
+atlas = ExtResource("2_c6ade")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sk4cc"]
+atlas = ExtResource("2_c6ade")
+region = Rect2(256, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n2th5"]
+atlas = ExtResource("2_c6ade")
+region = Rect2(320, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a50cu"]
+atlas = ExtResource("2_c6ade")
+region = Rect2(384, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b27yn"]
+atlas = ExtResource("2_c6ade")
+region = Rect2(448, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jvfou"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uike7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jvfou")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_83tj8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0vf4p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sk4cc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n2th5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a50cu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b27yn")
+}],
+"loop": 0,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="speceffect" unique_id=1413436321 instance=ExtResource("1_c6ade")]
+
+[node name="AnimatedSprite2D" parent="." index="0" unique_id=1677364355]
+sprite_frames = SubResource("SpriteFrames_jvfou")
+frame_progress = 0.0

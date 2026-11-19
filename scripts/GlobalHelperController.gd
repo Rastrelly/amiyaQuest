@@ -45,7 +45,8 @@ func useDobermann()->void:
 	GlobalFuncLib.spawnSpeceffectAtPoint("res://scenes/helperScenes/dobermannAreaCast.tscn",GlobalStateMonitor.playerPos + Vector2(100,0)*GlobalStateMonitor.playerDir,Vector2(1.0,1.0))
 
 func useAce()->void:
-	pass
+	GlobalFuncLib.spawnSpeceffectAtPoint("res://scenes/helperScenes/aceHelperCast.tscn",GlobalStateMonitor.playerPos,Vector2(GlobalStateMonitor.playerDir,1.0))
+	GlobalFuncLib.spawnSpeceffectAtPoint("res://scenes/se_helper_ace.tscn",GlobalStateMonitor.playerPos,Vector2(GlobalStateMonitor.playerDir,1.0))
 
 
 #makes helper unlocked and accessible in ui

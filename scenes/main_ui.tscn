@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://8tin6pr4eokx" path="res://scripts/main_ui.gd" id="1_fnul3"]
 [ext_resource type="Texture2D" uid="uid://bswqlkju37gfx" path="res://sprites/uiGraphics/ico_dobermann_smol.png" id="2_513t2"]
+[ext_resource type="Texture2D" uid="uid://bjmcao3xtaak6" path="res://sprites/uiGraphics/ico_effect_0.png" id="3_e6fyy"]
+[ext_resource type="Script" uid="uid://qnw838xcq2n6" path="res://scripts/effect_0_ico_script.gd" id="4_j6a7c"]
 
 [node name="mainUi" type="Control" unique_id=604756981]
 z_index = 100
@@ -124,3 +126,12 @@ pivot_offset = Vector2(10, 10)
 size_flags_horizontal = 0
 size_flags_vertical = 0
 text = "0"
+
+[node name="effect_0_ico" type="TextureRect" parent="." unique_id=500991592]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 43.0
+offset_right = 43.0
+offset_bottom = 83.0
+texture = ExtResource("3_e6fyy")
+script = ExtResource("4_j6a7c")

@@ -40,7 +40,7 @@ var lookDir:float = 1.0
 var isEnemy:bool = false
 
 func take_damage(amt:float):
-	if (not inIframes):
+	if (not inIframes and not $statEffController.hasEffect(0)):
 		inIframes = true
 		hp-=amt
 		if (hp < 0): hp = 0
@@ -59,8 +59,9 @@ func heal(amt:int)->void:
 		hp = hpMax
 
 
-func _ready() -> void:	
-	var UI = uiClass.instantiate()	
+func _ready() -> void:
+	var UI = uiClass.instantiate()
+	GlobalStateMonitor.plrRef = $"."
 	cameraRef.add_child.call_deferred(UI)
 	GlobalStateMonitor.healPlayer.connect(heal)
 	

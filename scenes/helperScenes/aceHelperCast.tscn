@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://qf671d0xmmd1"]
+
+[ext_resource type="Script" uid="uid://nyfi7sr18dyg" path="res://scripts/ace_helper_cast.gd" id="1_hwvis"]
+
+[node name="AceHelperCast" type="Node2D" unique_id=1509220284]
+script = ExtResource("1_hwvis")
