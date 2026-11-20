@@ -26,6 +26,10 @@ GlobalHelperController="*uid://kpk3fo43s5lh"
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[filesystem]
+
+import/blender/enabled=false
+
 [input]
 
 moveLeft={
